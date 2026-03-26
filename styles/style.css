@@ -1,0 +1,43 @@
+.canal{
+    background-color: #A6C8E2;
+    
+}
+
+.subway{
+    background-color: #F6E5BA;
+}
+
+.highway{
+    background-color: #322c4d;
+}
+
+.graffiti{
+    background-color: #333333;
+}
+
+.future{
+    background-color: #BDE3B4;
+}
+p {
+    text-align: center;
+    flex-wrap: wrap;
+    max-width: 500px;
+    padding: 20px;
+    margin: auto;
+}
+
+img {
+    display: block;
+    max-width: 500px;
+    max-height: auto;
+    margin: auto;
+    border: black;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+header {
+    font-size: 24;
+    font-style: bold;
+    padding: 20px;
+}
