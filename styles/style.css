@@ -1,39 +1,59 @@
+:root {
+    --beige: #F6E5BA;
+    --black: #333333;
+    --white: #f8f8f8;
+    --indigo: #322c4d;
+    --teal: #00ada7;
+    --orange: #f4a02b;
+    --red: #f70002;
+    --pink: #ed6a9a;
+    --green: #95c460;
+    --canal-blue: #A6C8E2;
+    --future-green: #BDE3B4;
+}
+
 .hero {
     height: 100vh;
-
+    width: 100%;
+    
 }
 
 .canal{
-    background-color: #A6C8E2;
+    background-color: var(--canal-blue);
     
 }
 
 .subway{
-    background-color: #F6E5BA;
+    background-color: var(--beige);
 }
 
 .highway{
-    background-color: #322c4d;
+    background-color: var(--indigo);
 }
 
 .graffiti{
-    background-color: #333333;
+    background-color: var(--black);
 }
 
 .future{
-    background-color: #BDE3B4;
+    background-color: var(--future-green);
 }
+
 p {
-    text-align: center;
-    flex-wrap: wrap;
-    max-width: 100ch;
+    max-width: 70ch;
     padding: 20px;
     margin: auto;
     font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 18px;
 }
 
 h1, h2, h3, h4, h5 {
     font-family: "Libre Bodoni", serif;
+}
+
+h1 {
+    font-weight: 800;
 }
 
 img {
@@ -44,10 +64,4 @@ img {
     border: black;
     border-style: solid;
     border-radius: 5px;
-}
-
-header {
-    font-size: 24;
-    font-style: bold;
-    padding: 20px;
 }
