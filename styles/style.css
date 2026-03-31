@@ -22,6 +22,8 @@
     position: absolute;
     height: 120vh;
     margin: auto;
+    bottom: 0;
+    width: auto;
 }
 
 .canal{
