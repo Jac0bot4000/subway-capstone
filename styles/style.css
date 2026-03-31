@@ -26,11 +26,29 @@
     width: auto;
 }
 
-#newspaper-graphic{
+/* #newspaper-graphic{
     height: 100vh;
     overflow: scroll;
     position: relative;
     left: 0;
+} */
+
+.horizontal-section {
+  height: 300vh; /* This determines how long the "scroll" feels */
+}
+
+.sticky-wrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden; /* Hide the image parts that stick out */
+}
+
+.scroll-content {
+  display: flex;
+  height: 100%;
+  width: fit-content; /* Shrinks to the size of your wide image/content */
 }
 
 .canal{
