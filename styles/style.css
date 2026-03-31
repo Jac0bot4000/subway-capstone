@@ -1,6 +1,6 @@
 .hero {
     height: 100vh;
-    
+
 }
 
 .canal{
@@ -26,9 +26,14 @@
 p {
     text-align: center;
     flex-wrap: wrap;
-    max-width: 500px;
+    max-width: 100ch;
     padding: 20px;
     margin: auto;
+    font-family: "Raleway", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Libre Bodoni", serif;
 }
 
 img {
