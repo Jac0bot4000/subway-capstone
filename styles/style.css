@@ -33,22 +33,26 @@
     left: 0;
 } */
 
+/* The container that defines the scroll duration */
 .horizontal-section {
-  height: 300vh; /* This determines how long the "scroll" feels */
-}
-
-.sticky-wrapper {
-  position: sticky;
-  top: 0;
-  height: 100vh;
   width: 100%;
-  overflow: hidden; /* Hide the image parts that stick out */
+  height: 600vh; /* This is your scroll "track" length */
+  overflow: visible; 
 }
 
+/* The element that actually moves */
 .scroll-content {
   display: flex;
-  height: 100%;
-  width: fit-content; /* Shrinks to the size of your wide image/content */
+  flex-wrap: nowrap;
+  width: fit-content; /* Critical: allows content to be wider than the screen */
+  height: 100vh;
+}
+
+/* Ensure your images/panels have a set size */
+.scroll-content img {
+  height: 100vh;
+  width: auto;
+  display: block;
 }
 
 .canal{

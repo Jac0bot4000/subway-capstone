@@ -1,16 +1,23 @@
-gsap.registerPlugin(ScrollTrigger);
+document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
 
-let content = document.querySelector(".scroll-content");
+    const content = document.querySelector(".scroll-content");
+    const section = document.querySelector(".horizontal-section");
 
-gsap.to(content, {
-  x: () => -(content.scrollWidth - window.innerWidth), // Move left by the width of content
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".horizontal-section",
-    start: "top top",
-    end: "bottom bottom",
-    scrub: 1, // Connects scroll position to animation progress
-    pin: true, // Optional: GSAP can handle the pinning for you
-    invalidateOnRefresh: true, // Fixes issues on window resize
-  }
+    if (content && section) {
+        gsap.to(content, {
+            // Move the content to the left by its full width minus the screen width
+            x: () => -(content.scrollWidth - window.innerWidth),
+            ease: "none",
+            scrollTrigger: {
+                trigger: section,
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,   // Smooth scrubbing
+                pin: true,  // GSAP handles the sticky behavior
+                anticipatePin: 1,
+                invalidateOnRefresh: true, // Recalculates on window resize
+            }
+        });
+    }
 });
