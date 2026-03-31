@@ -15,7 +15,13 @@
 .hero {
     height: 100vh;
     width: 100%;
-    
+    background-color: var(--beige);
+}
+
+#tunnel {
+    position: absolute;
+    height: 120vh;
+    margin: auto;
 }
 
 .canal{
