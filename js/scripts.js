@@ -5,18 +5,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const section = document.querySelector(".horizontal-section");
 
     if (content && section) {
+        // 1. Calculate the horizontal distance to move
+        const getScrollAmount = () => -(content.scrollWidth - window.innerWidth);
+
+        // 2. Create the animation
         gsap.to(content, {
-            // Move the content to the left by its full width minus the screen width
-            x: () => -(content.scrollWidth - window.innerWidth),
+            x: getScrollAmount,
             ease: "none",
             scrollTrigger: {
                 trigger: section,
                 start: "top top",
-                end: "bottom bottom",
-                scrub: 1,   // Smooth scrubbing
-                pin: true,  // GSAP handles the sticky behavior
-                anticipatePin: 1,
-                invalidateOnRefresh: true, // Recalculates on window resize
+                // This 'end' value tells GSAP exactly when to stop pinning
+                // by making the vertical scroll distance match the image width
+                end: () => `+=${content.scrollWidth - window.innerWidth}`, 
+                pin: true,
+                scrub: 1,
+                invalidateOnRefresh: true,
             }
         });
     }
