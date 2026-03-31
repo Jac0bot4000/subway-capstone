@@ -29,6 +29,8 @@
 #newspaper-graphic{
     height: 100vh;
     overflow: scroll;
+    position: relative;
+    left: 0;
 }
 
 .canal{
