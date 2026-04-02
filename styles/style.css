@@ -55,12 +55,24 @@
 }
 
 .transition {
-    height: 810px;
+    height: 400px;
     width: 100vw;
 }
 
 #canal-subway {
     background: linear-gradient(180deg, #A6C8E2 0%, #F6E5BA 100%);
+}
+
+#subway-highway {
+    background: linear-gradient(180deg, #F6E5BA 0%, #A77BB3 40.87%, #322C4D 81.73%);
+}
+
+#highway-graffiti {
+    background: linear-gradient(180deg, #322C4D 0%, #333333 100%);
+}
+
+#graffiti-future {
+    background: linear-gradient(180deg, #333333 0%, #3E6357 46.63%, #BDE3B4 100%);
 }
 
 .canal{
