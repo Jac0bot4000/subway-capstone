@@ -57,6 +57,7 @@ body {
 .content-container {
     width: 70ch;
     margin: auto;
+    position: relative;
 }
 
 .content_img {
@@ -64,10 +65,13 @@ body {
 }
 
 .left-img-wrap-text {
+    position: relative;
+    left: 0;
+    transform: translateX(-50%);
     float: left;
-    width: 700px;
+    width: 100%;
     shape-outside: url('../graphics/subwaycarside.png');
-    shape-margin: 20px;
+    shape-margin: 10px;
     shape-image-threshold: 0.5;
 }
 
