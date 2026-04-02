@@ -59,6 +59,14 @@ body {
     width: 100%;
 }
 
+.left-img-wrap-text {
+    float: left;
+    width: 500px;
+    shape-outside: url('../graphics/subwaycarside.png');
+    shape-margin: 20px;
+    shape-image-threshold: 0.5;
+}
+
 .transition {
     height: 400px;
     width: 100%;
