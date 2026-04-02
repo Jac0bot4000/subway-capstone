@@ -54,14 +54,18 @@ body {
     display: block;
 }
 
+.content-container {
+    width: 70ch;
+    margin: auto;
+}
+
 .content_img {
-    max-width: 70ch;
     width: 100%;
 }
 
 .left-img-wrap-text {
     float: left;
-    width: 500px;
+    width: 700px;
     shape-outside: url('../graphics/subwaycarside.png');
     shape-margin: 20px;
     shape-image-threshold: 0.5;
@@ -110,7 +114,6 @@ body {
 }
 
 p {
-    max-width: 70ch;
     padding: 20px;
     margin: auto;
     font-family: "Raleway", sans-serif;
