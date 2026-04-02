@@ -54,6 +54,15 @@
     display: block;
 }
 
+.transition {
+    height: 810px;
+    width: 100vw;
+}
+
+#canal-subway {
+    background: linear-gradient(180deg, #A6C8E2 0%, #F6E5BA 100%);
+}
+
 .canal{
     background-color: var(--canal-blue);
     
