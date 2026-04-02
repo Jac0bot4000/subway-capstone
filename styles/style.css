@@ -51,6 +51,11 @@ body {
     display: block;
 }
 
+.content_img {
+    max-width: 70ch;
+    width: 100%;
+}
+
 .transition {
     height: 400px;
     width: 100%;
