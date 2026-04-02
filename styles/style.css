@@ -12,11 +12,7 @@
     --future-green: #BDE3B4;
 }
 
-html {
-    padding: 0;
-}
-
-div {
+body {
     margin: 0;
 }
 
