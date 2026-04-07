@@ -58,6 +58,7 @@ body {
     width: 70ch;
     margin: auto;
     position: relative;
+    height: fit-content;
 }
 
 .content_img {
@@ -96,7 +97,42 @@ body {
 
 .canal{
     background-color: var(--canal-blue);
-    
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr min(70ch, 100%) 1fr;
+}
+
+.graphics-left {
+    align-self: stretch;
+    position: relative;
+    margin-right: 40px;
+}
+
+.canal #rock1 {
+    position: absolute;
+    right: 0;
+    top: 10%;
+    width: 246.35px;
+    height: 186px;
+    transform: rotate(42.72deg);
+}
+
+.canal #rock2 {
+    right: 130px;
+    top: 33%;
+    position: absolute;
+    width: 125.88px;
+    height: 65.82px;
+    transform: rotate(26.67deg);
+}
+
+.canal #rock3 {
+    right: 20px;
+    top: 42%;
+    position: absolute;
+    width: 170.31px;
+    height: 128.59px;
+    transform: rotate(0deg);
 }
 
 .subway{
