@@ -151,10 +151,13 @@ body {
 
 .highway{
     background-color: var(--indigo);
+    color: var(--white);
 }
 
 .graffiti{
     background-color: var(--black);
+    color: var(--white);
+
 }
 
 .future{
