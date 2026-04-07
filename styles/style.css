@@ -109,6 +109,7 @@ body {
     height: fit-content;
     display: grid;
     grid-template-columns: 1fr min(70ch, 100%) 1fr;
+    padding-top: 50px;
 }
 
 .graphics-left {
