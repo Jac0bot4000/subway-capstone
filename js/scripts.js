@@ -25,3 +25,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+document.querySelectorAll('figure').forEach(el => {
+  // 1. Randomize rotation
+  const deg = Math.floor((Math.random() * 51) - 25);
+  const rad = Math.abs(deg) * (Math.PI / 180);
+  
+  // 2. Get current dimensions
+  const w = el.offsetWidth;
+  const h = el.offsetHeight;
+
+  // 3. Calculate exactly how much taller the box became
+  const newH = (w * Math.sin(rad)) + (h * Math.cos(rad));
+  const totalExtra = newH - h;
+  
+  // 4. Apply styles (half the extra space to top, half to bottom)
+  el.style.transform = `rotate(${deg}deg)`;
+  el.style.setProperty('--extra-space', `${totalExtra / 2}px`);
+});

@@ -184,6 +184,17 @@ img {
 
 .figure {
     position: relative;
+    display: inline-block;
+    --extra-space: 0px;
+}
+
+figure::before,
+figure::after {
+  content: "";
+  display: block;
+  /* Use the variable set by JavaScript */
+  height: var(--extra-space);
+  width: 100%;
 }
 
 .content_img {
