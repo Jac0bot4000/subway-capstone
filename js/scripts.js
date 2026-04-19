@@ -29,9 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    
-
-
     const content = document.querySelector(".scroll-content");
     const section = document.querySelector(".horizontal-section");
 
@@ -95,5 +92,5 @@ window.addEventListener('load', () => {
 
         gsap.to(window, {duration: 2, scrollTo: ".canal", ease: "power2.inOut"});
 
-    }, 8500);
+    }, 8200);
 });
