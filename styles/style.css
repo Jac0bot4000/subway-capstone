@@ -263,6 +263,10 @@ html {
     background-color: var(--beige);
 }
 
+#newspaper-graphic-vertical {
+    display: none;
+}
+
 .highway{
     background-color: var(--indigo);
     color: var(--white);
@@ -343,6 +347,14 @@ figcaption {
         padding-left: 20px;
         padding-right: 20px;
         width: auto;
+    }
+    .horizontal-section {
+        display: none;
+    }
+    #newspaper-graphic-vertical {
+        display: block;
+        width: 100%;
+        height: auto;
     }
 
     .graphics-left, .graphics-right {
