@@ -12,6 +12,10 @@
     --future-green: #BDE3B4;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     overflow-x: hidden;
@@ -220,10 +224,16 @@ figcaption {
 
 @media screen and (max-width: 800px) {
     .content-container {
-        padding: 0 20px;
-        width: 100vw;
+        width: 100%;
         max-width: none;
     }
+
+    p {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: auto;
+    }
+
     .graphics-left, .graphics-right {
         display: none;
     }
@@ -242,8 +252,12 @@ figcaption {
         margin-right: -20%;
     }
 
-    figure::before,
-    figure::after {
-        display: none;
+    .subway-wrap-text {
+        width: 70%;
+        margin-left: -40%;
+    }
+
+    figure {
+        margin: 20px 0;
     }
 }
