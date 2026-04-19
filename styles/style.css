@@ -26,11 +26,12 @@ body {
     width: 100%;
     background-color: var(--beige);
     position: relative;
+    overflow: hidden;
 }
 
 #tunnel {
     position: absolute;
-    height: 120vh;
+    height: 100vh;
     margin: auto;
     left: 50%;
     transform: translate(-50%, 0);
@@ -238,13 +239,13 @@ figcaption {
         display: none;
     }
     .content_img {
-        width: 70%;
+        width: 95%;
     }
     .canal {
         display: block;
     }
     #tunnel {
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     .canalboat-wrap-text {
