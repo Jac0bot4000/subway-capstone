@@ -63,7 +63,7 @@ html {
     clip-path: inset(50% 0 50% 0); 
     
 
-    animation: centerSplitReveal 1.2s 6.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    animation: centerSplitReveal 1.2s 5.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
 
     will-change: clip-path;
 }
@@ -77,7 +77,7 @@ html {
     margin-top: 1.5rem;
 
     opacity: 0;
-    animation: subtitleFadeIn 1s 7.5s ease-out forwards;
+    animation: subtitleFadeIn 1s 7.2s ease-out forwards;
 }
 
 #tunnel {
@@ -243,13 +243,19 @@ html {
     background: linear-gradient(180deg, #333333 0%, #3E6357 46.63%, #BDE3B4 100%);
 }
 
-.canal{
-    background-color: var(--canal-blue);
+.timeline-section {
     height: fit-content;
     display: grid;
     grid-template-columns: 1fr min(70ch, 100%) 1fr;
     padding-top: 50px;
     overflow: hidden;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    padding-bottom: 1px;
+}
+
+.canal{
+    background-color: var(--canal-blue);
 }
 
 .graphics-left {

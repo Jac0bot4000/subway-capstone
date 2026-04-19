@@ -5,10 +5,19 @@ document.addEventListener("DOMContentLoaded", () => {
     let smoother = ScrollSmoother.create({
         wrapper: "#smooth-wrapper",
         content: "#smooth-content",
-        smooth: 2,
+        smooth: 1.5,
         smoothTouch: 0.1,
         effects: true
     });
+
+    gsap.to('#rock1', {
+      rotate: 180,
+      scrollTrigger: {
+        trigger: '#rock1', 
+        start: 'top bottom',
+        markers: true
+      }
+    })
 
 
     const content = document.querySelector(".scroll-content");
@@ -37,7 +46,7 @@ const mediaQuery = window.matchMedia('(min-width: 800px)');
 function handleRotation(e) {
   document.querySelectorAll('figure').forEach(el => {
     if (e.matches) {
-      const deg = Math.floor((Math.random() * 51) - 25);
+      const deg = Math.floor((Math.random() * 26) - 13);
       const rad = Math.abs(deg) * (Math.PI / 180);
       
       const w = el.offsetWidth;
