@@ -194,14 +194,7 @@ html {
     height: 100vh;
     width: auto;
     display: block;
-}
-
-.content-container {
-    width: 70ch;
-    margin: auto;
-    position: relative;
-    height: fit-content;
-}
+} 
 
 .subway-wrap-text {
     float: left;
@@ -252,6 +245,8 @@ html {
     margin-top: -1px;
     margin-bottom: -1px;
     padding-bottom: 1px;
+
+    grid-template-areas: "left center right";
 }
 
 .canal{
@@ -259,9 +254,25 @@ html {
 }
 
 .graphics-left {
+    grid-area: left;
     align-self: stretch;
     position: relative;
     margin-right: 40px;
+}
+
+.graphics-right {
+    grid-area: right;
+    align-self: stretch;
+    position: relative;
+    margin-left: 40px;
+}
+
+.content-container {
+    width: 70ch;
+    margin: auto;
+    position: relative;
+    height: fit-content;
+    grid-area: center;
 }
 
 .canal #rock1 {

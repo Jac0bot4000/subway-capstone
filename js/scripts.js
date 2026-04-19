@@ -10,14 +10,26 @@ document.addEventListener("DOMContentLoaded", () => {
         effects: true
     });
 
-    gsap.to('#rock1', {
-      rotate: 180,
-      scrollTrigger: {
-        trigger: '#rock1', 
-        start: 'top bottom',
-        markers: true
-      }
-    })
+    let parallaxObjects = gsap.utils.toArray('.parallax-object');
+
+    parallaxObjects.forEach((object) => {
+      const randomRotate = Math.random() > 0.5
+        ? gsap.utils.random(-360, -180)
+        : gsap.utils.random(180, 360);
+
+      gsap.to(object, {
+            rotate: randomRotate,
+            scrollTrigger: {
+              trigger: object, 
+              start: 'top bottom',
+              end: 'bottom top',
+              markers: false,
+              scrub: true
+            }
+        });
+    });
+
+    
 
 
     const content = document.querySelector(".scroll-content");
@@ -83,5 +95,5 @@ window.addEventListener('load', () => {
 
         gsap.to(window, {duration: 2, scrollTo: ".canal", ease: "power2.inOut"});
 
-    }, 9000);
+    }, 8500);
 });
