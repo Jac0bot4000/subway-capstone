@@ -1,5 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollSmoother);
+
+    let smoother = ScrollSmoother.create({
+        wrapper: "#smooth-wrapper",
+        content: "#smooth-content",
+        smooth: 2,
+        smoothTouch: 0.1,
+        effects: true
+    });
+
 
     const content = document.querySelector(".scroll-content");
     const section = document.querySelector(".horizontal-section");
@@ -50,9 +60,10 @@ handleRotation(mediaQuery);
 mediaQuery.addEventListener('change', handleRotation);
 
 
-
+// Scroll lock
 window.addEventListener('load', () => {
     const body = document.body;
+    const canal = document.getElementsByClassName('canal')[0];
 
     body.classList.add('scroll-lock');
 
@@ -60,5 +71,8 @@ window.addEventListener('load', () => {
         body.classList.remove('scroll-lock');
         
         body.classList.add('intro-complete');
-    }, 7000); 
+
+        gsap.to(window, {duration: 2, scrollTo: ".canal", ease: "power2.inOut"});
+
+    }, 9000);
 });

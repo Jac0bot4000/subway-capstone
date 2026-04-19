@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="styles/style.css">
     
     <!-- Javascript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"> defer</script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
     <script src="js/scripts.js" defer></script>
 
     <title>Subway Capstone</title>
@@ -24,19 +26,24 @@
 
 </head>
 <body>
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
     <div id="hero">
         <img src="graphics/tunnel.png" alt="tunnel with train tracks coming out" id="tunnel">
         <img src="graphics/subwaycarfront.png" alt="front view of a subway car" id="hero-train">
         <div id="intro-text-box">
-            <h1 id="intro-title">The Abandoned Rochester Subway</h1>
+            <div id="intro-wrapper">
+                <h1 id="intro-title">The Abandoned Rochester Subway</h1>
+                <p id="intro-subtitle">An HCD Capstone Project</p>
+            </div>
         </div>
     </div>
     <!--Eerie Canal-->
     <div class = "canal"> 
         <div class="graphics-left">
-            <img src="graphics/rock_1.png" id="rock1">
-            <img src="graphics/rock_2.png" id="rock2">
-            <img src="graphics/rock_1.png" id="rock3">
+            <img src="graphics/rock_1.png" id="rock1" data-speed="1.2">
+            <img src="graphics/rock_2.png" id="rock2" data-speed="1.4">
+            <img src="graphics/rock_1.png" id="rock3" data-speed="1.3">
         </div>
         <div class="content-container">
             <p>The city of Rochester has a renowned history of being one of America’s first boomtowns, 
@@ -291,4 +298,6 @@
         </div>
     </div>
 
+    </div>
+    </div>
 </body>
