@@ -26,20 +26,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-document.querySelectorAll('figure').forEach(el => {
-  // 1. Randomize rotation
-  const deg = Math.floor((Math.random() * 51) - 25);
-  const rad = Math.abs(deg) * (Math.PI / 180);
-  
-  // 2. Get current dimensions
-  const w = el.offsetWidth;
-  const h = el.offsetHeight;
+const mediaQuery = window.matchMedia('(min-width: 800px)');
 
-  // 3. Calculate exactly how much taller the box became
-  const newH = (w * Math.sin(rad)) + (h * Math.cos(rad));
-  const totalExtra = newH - h;
-  
-  // 4. Apply styles (half the extra space to top, half to bottom)
-  el.style.transform = `rotate(${deg}deg)`;
-  el.style.setProperty('--extra-space', `${totalExtra / 2}px`);
-});
+function handleRotation(e) {
+  document.querySelectorAll('figure').forEach(el => {
+    if (e.matches) {
+      // Screen is 800px or wider: Apply the math
+      const deg = Math.floor((Math.random() * 51) - 25);
+      const rad = Math.abs(deg) * (Math.PI / 180);
+      
+      const w = el.offsetWidth;
+      const h = el.offsetHeight;
+
+      const newH = (w * Math.sin(rad)) + (h * Math.cos(rad));
+      const totalExtra = newH - h;
+      
+      el.style.transform = `rotate(${deg}deg)`;
+      el.style.setProperty('--extra-space', `${totalExtra / 2}px`);
+    } else {
+      // Screen is narrower than 800px: Reset everything
+      el.style.transform = 'none';
+      el.style.setProperty('--extra-space', '0px');
+    }
+  });
+}
+
+// 1. Run on page load
+handleRotation(mediaQuery);
+
+// 2. Listen for the specific "cross-over" point (swapping from mobile to desktop)
+mediaQuery.addEventListener('change', handleRotation);

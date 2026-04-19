@@ -14,6 +14,7 @@
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 .hero {
@@ -64,7 +65,7 @@ body {
 .subway-wrap-text {
     float: left;
     width: 100%;
-    margin-left: -50%;
+    margin-left: -60%;
     shape-outside: url('../graphics/subwaycarside.png');
     shape-margin: 20px;
     shape-image-threshold: 0.5;
@@ -77,6 +78,7 @@ body {
     shape-outside: url('../graphics/canalboat.png');
     shape-margin: 20px;
     shape-image-threshold: 0.5;
+    overflow: hidden;
 }
 
 .transition {
@@ -106,6 +108,7 @@ body {
     display: grid;
     grid-template-columns: 1fr min(70ch, 100%) 1fr;
     padding-top: 50px;
+    overflow: hidden;
 }
 
 .graphics-left {
@@ -162,6 +165,7 @@ body {
 
 p {
     padding: 0px;
+    padding-bottom: 20px;
     margin: auto;
     font-family: "Raleway", sans-serif;
     font-size: 16px;
@@ -214,3 +218,32 @@ figcaption {
     justify-self: center;
 }
 
+@media screen and (max-width: 800px) {
+    .content-container {
+        padding: 0 20px;
+        width: 100vw;
+        max-width: none;
+    }
+    .graphics-left, .graphics-right {
+        display: none;
+    }
+    .content_img {
+        width: 70%;
+    }
+    .canal {
+        display: block;
+    }
+    #tunnel {
+        overflow: hidden;
+    }
+
+    .canalboat-wrap-text {
+        width: 50%;
+        margin-right: -20%;
+    }
+
+    figure::before,
+    figure::after {
+        display: none;
+    }
+}
