@@ -52,10 +52,13 @@ mediaQuery.addEventListener('change', handleRotation);
 
 
 window.addEventListener('load', () => {
-    document.body.style.overflow = 'hidden';
+    const body = document.body;
+
+    body.classList.add('scroll-lock');
 
     setTimeout(() => {
-        document.body.style.overflow = 'visible';
-        document.body.classList.add('intro-complete');
+        body.classList.remove('scroll-lock');
+        
+        body.classList.add('intro-complete');
     }, 7000); 
 });
