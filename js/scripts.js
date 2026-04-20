@@ -1,33 +1,93 @@
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollSmoother);
+
+let smoother = ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 1.5,
+    smoothTouch: 0.1,
+    effects: true
+});
+
+let parallaxObjects = gsap.utils.toArray('.parallax-object');
+
+parallaxObjects.forEach((object) => {
+  const randomRotate = Math.random() > 0.5
+    ? gsap.utils.random(-270, -90)
+    : gsap.utils.random(90, 270);
+
+  gsap.to(object, {
+        rotate: randomRotate,
+        scrollTrigger: {
+          trigger: object, 
+          start: 'top bottom',
+          end: 'bottom top',
+          markers: false,
+          scrub: true
+        }
+    });
+});
+
+gsap.from(".canalboat-wrap-text", {
+  x: "100vw",
+  scrollTrigger: {
+    trigger: ".canalboat-wrap-text",
+    start: 'top bottom',
+    end: 'center center',
+    scrub: true
+  }
+});
+
+gsap.from(".subway-wrap-text", {
+  x: "-50vw",
+  scrollTrigger: {
+    trigger: ".subway-wrap-text",
+    start: 'top bottom',
+    end: 'center center',
+    scrub: true
+  }
+});
+
+let contentImgs = gsap.utils.toArray("figure");
+
+contentImgs.forEach((image) => {
+  gsap.from(image, {
+    rotate: 0,
+    scale: 1.5,
+    scrollTrigger: {
+      trigger: image,
+      start: 'top bottom',
+      end: 'bottom center',
+      scrub: true,
+      once: true
+    }
+  });
+});
+
+const lighterFrames = gsap.utils.toArray("#lighterFrames .frame");
+
+gsap.set(lighterFrames, { opacity: 0});
+gsap.set(lighterFrames[0], { opacity: 1});
+
+const lighterAnimation = gsap.timeline({ repeat: -1 });
+
+lighterFrames.forEach((frame, i) => {
+  lighterAnimation.set(frame, {opacity: 1}, i * 0.2).set(frame, {opacity: 0}, (i + 1) * 0.2);
+});
+
+gsap.from("#lighterFrames", {
+  rotate: 0,
+    scrollTrigger: {
+      trigger: "#lighterFrames",
+      start: 'top bottom',
+      end: 'bottom center',
+      scrub: true,
+    }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(ScrollSmoother);
-
-    let smoother = ScrollSmoother.create({
-        wrapper: "#smooth-wrapper",
-        content: "#smooth-content",
-        smooth: 1.5,
-        smoothTouch: 0.1,
-        effects: true
-    });
-
-    let parallaxObjects = gsap.utils.toArray('.parallax-object');
-
-    parallaxObjects.forEach((object) => {
-      const randomRotate = Math.random() > 0.5
-        ? gsap.utils.random(-360, -180)
-        : gsap.utils.random(180, 360);
-
-      gsap.to(object, {
-            rotate: randomRotate,
-            scrollTrigger: {
-              trigger: object, 
-              start: 'top bottom',
-              end: 'bottom top',
-              markers: false,
-              scrub: true
-            }
-        });
-    });
+    
+    
 
     const content = document.querySelector(".scroll-content");
     const section = document.querySelector(".horizontal-section");
