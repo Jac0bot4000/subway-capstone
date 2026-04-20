@@ -1,93 +1,91 @@
-gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(ScrollSmoother);
+document.addEventListener("DOMContentLoaded", () => {
 
-let smoother = ScrollSmoother.create({
-    wrapper: "#smooth-wrapper",
-    content: "#smooth-content",
-    smooth: 1.5,
-    smoothTouch: 0.1,
-    effects: true
-});
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollSmoother);
 
-let parallaxObjects = gsap.utils.toArray('.parallax-object');
+  let smoother = ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 1.5,
+      smoothTouch: 0.1,
+      effects: true
+  });
 
-parallaxObjects.forEach((object) => {
-  const randomRotate = Math.random() > 0.5
-    ? gsap.utils.random(-270, -90)
-    : gsap.utils.random(90, 270);
+  let parallaxObjects = gsap.utils.toArray('.parallax-object');
 
-  gsap.to(object, {
-        rotate: randomRotate,
-        scrollTrigger: {
-          trigger: object, 
-          start: 'top bottom',
-          end: 'bottom top',
-          markers: false,
-          scrub: true
-        }
-    });
-});
+  parallaxObjects.forEach((object) => {
+    const randomRotate = Math.random() > 0.5
+      ? gsap.utils.random(-270, -90)
+      : gsap.utils.random(90, 270);
 
-gsap.from(".canalboat-wrap-text", {
-  x: "100vw",
-  scrollTrigger: {
-    trigger: ".canalboat-wrap-text",
-    start: 'top bottom',
-    end: 'center center',
-    scrub: true
-  }
-});
+    gsap.to(object, {
+          rotate: randomRotate,
+          scrollTrigger: {
+            trigger: object, 
+            start: 'top bottom',
+            end: 'bottom top',
+            markers: false,
+            scrub: true
+          }
+      });
+  });
 
-gsap.from(".subway-wrap-text", {
-  x: "-50vw",
-  scrollTrigger: {
-    trigger: ".subway-wrap-text",
-    start: 'top bottom',
-    end: 'center center',
-    scrub: true
-  }
-});
-
-let contentImgs = gsap.utils.toArray("figure");
-
-contentImgs.forEach((image) => {
-  gsap.from(image, {
-    rotate: 0,
-    scale: 1.5,
+  gsap.from(".canalboat-wrap-text", {
+    x: "100vw",
     scrollTrigger: {
-      trigger: image,
+      trigger: ".canalboat-wrap-text",
       start: 'top bottom',
-      end: 'bottom center',
-      scrub: true,
-      once: true
+      end: 'center center',
+      scrub: true
     }
   });
-});
 
-const lighterFrames = gsap.utils.toArray("#lighterFrames .frame");
-
-gsap.set(lighterFrames, { opacity: 0});
-gsap.set(lighterFrames[0], { opacity: 1});
-
-const lighterAnimation = gsap.timeline({ repeat: -1 });
-
-lighterFrames.forEach((frame, i) => {
-  lighterAnimation.set(frame, {opacity: 1}, i * 0.2).set(frame, {opacity: 0}, (i + 1) * 0.2);
-});
-
-gsap.from("#lighterFrames", {
-  rotate: 0,
+  gsap.from(".subway-wrap-text", {
+    x: "-50vw",
     scrollTrigger: {
-      trigger: "#lighterFrames",
+      trigger: ".subway-wrap-text",
       start: 'top bottom',
-      end: 'bottom center',
-      scrub: true,
+      end: 'center center',
+      scrub: true
     }
-});
+  });
 
-document.addEventListener("DOMContentLoaded", () => {
-    
-    
+  let contentImgs = gsap.utils.toArray("figure");
+
+  contentImgs.forEach((image) => {
+    gsap.from(image, {
+      rotate: 0,
+      scale: 1.5,
+      scrollTrigger: {
+        trigger: image,
+        start: 'top bottom',
+        end: 'bottom center',
+        scrub: true,
+        once: true
+      }
+    });
+  });
+
+  const lighterFrames = gsap.utils.toArray("#lighterFrames .frame");
+
+  gsap.set(lighterFrames, { opacity: 0});
+  gsap.set(lighterFrames[0], { opacity: 1});
+
+  const lighterAnimation = gsap.timeline({ repeat: -1 });
+
+  lighterFrames.forEach((frame, i) => {
+    lighterAnimation.set(frame, {opacity: 1}, i * 0.2).set(frame, {opacity: 0}, (i + 1) * 0.2);
+  });
+
+  gsap.from("#lighterFrames", {
+    rotate: 0,
+      scrollTrigger: {
+        trigger: "#lighterFrames",
+        start: 'top bottom',
+        end: 'bottom center',
+        scrub: true,
+      }
+  });
 
     const content = document.querySelector(".scroll-content");
     const section = document.querySelector(".horizontal-section");
