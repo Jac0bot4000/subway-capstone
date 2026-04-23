@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     lighterAnimation.set(frame, {opacity: 1}, i * 0.2).set(frame, {opacity: 0}, (i + 1) * 0.2);
   });
 
-  gsap.from("#lighterFrames", {
+    gsap.from("#lighterFrames", {
     rotate: 0,
       scrollTrigger: {
         trigger: "#lighterFrames",
@@ -86,6 +86,29 @@ document.addEventListener("DOMContentLoaded", () => {
         scrub: true,
       }
   });
+
+  const smokeFrames = gsap.utils.toArray("#smokeFrames .frame");
+
+  gsap.set(smokeFrames, { opacity: 0});
+  gsap.set(smokeFrames[0], { opacity: 1});
+
+  const smokeAnimation = gsap.timeline({ repeat: -1 });
+
+  smokeFrames.forEach((frame, i) => {
+    smokeAnimation.set(frame, {opacity: 1}, i * 0.3).set(frame, {opacity: 0}, (i + 1) * 0.3);
+  });
+
+  const rrxFrames = gsap.utils.toArray("#rrxFrames .frame");
+
+  gsap.set(rrxFrames, { opacity: 0});
+  gsap.set(rrxFrames[0], { opacity: 1});
+
+  const rrxAnimation = gsap.timeline({ repeat: -1 });
+
+  rrxFrames.forEach((frame, i) => {
+    rrxAnimation.set(frame, {opacity: 1}, i * 0.75).set(frame, {opacity: 0}, (i + 1) * 0.75);
+  });
+
 
     const content = document.querySelector(".scroll-content");
     const section = document.querySelector(".horizontal-section");
@@ -137,18 +160,18 @@ mediaQuery.addEventListener('change', handleRotation);
 
 
 // Scroll lock
-window.addEventListener('load', () => {
-    const body = document.body;
-    const canal = document.getElementsByClassName('canal')[0];
+// window.addEventListener('load', () => {
+//     const body = document.body;
+//     const canal = document.getElementsByClassName('canal')[0];
 
-    body.classList.add('scroll-lock');
+//     body.classList.add('scroll-lock');
 
-    setTimeout(() => {
-        body.classList.remove('scroll-lock');
+//     setTimeout(() => {
+//         body.classList.remove('scroll-lock');
         
-        body.classList.add('intro-complete');
+//         body.classList.add('intro-complete');
 
-        gsap.to(window, {duration: 2, scrollTo: ".canal", ease: "power2.inOut"});
+//         gsap.to(window, {duration: 2, scrollTo: ".canal", ease: "power2.inOut"});
 
-    }, 8200);
-});
+//     }, 8200);
+// });

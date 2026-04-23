@@ -23,6 +23,7 @@ body {
 
 html {
     overflow-x: hidden;
+    min-width: 350px;
 }
 
 #hero {
@@ -263,6 +264,7 @@ html {
     background-color: var(--canal-blue);
 }
 
+
 .graphics-left {
     grid-area: left;
     align-self: stretch;
@@ -275,6 +277,10 @@ html {
     align-self: stretch;
     position: relative;
     margin-left: 40px;
+}
+
+.parallax-object {
+    position: absolute;
 }
 
 .content-container {
@@ -312,6 +318,14 @@ html {
     transform: rotate(0deg);
 }
 
+.canal #rock4 {
+    left: 40px;
+    top: 5%;
+    width: 175px;
+    position: absolute;
+    filter: grayscale();
+}
+
 #lighterFrames {
     right: 70px;
     bottom: 25%;
@@ -330,6 +344,47 @@ html {
 
 .subway{
     background-color: var(--beige);
+}
+
+.subway #rock5 {
+    width: 172px;
+    height: auto;
+    top: 450px;
+    right: 80px;
+}
+
+.subway #rock6 {
+    width: 150px;
+    height: auto;
+    top: 800px;
+    right: 15px;
+}
+
+.subway #rock7 {
+    width: 220px;
+    height: auto;
+    top: 600px;
+    right: 145px;
+}
+
+.subway #rock8 {
+    width: 130px;
+    height: auto;
+    top: 950px;
+    right: 105px;
+}
+
+.subway #token1 {
+    width: 150px;
+    top: 5%;
+    left: 115px;
+}
+
+.subway #token2 {
+    width: 150px;
+    height: auto;
+    top: 2.5%;
+    left: 15px;
 }
 
 #newspaper-graphic-vertical {
@@ -369,6 +424,65 @@ h1 {
     margin: 0;
 }
 
+.quote-block {
+    position: relative;
+    width: 750px;
+    left: 50%;
+    transform: translate(-50%, 25%);
+    height: 500px;
+}
+
+.quote {
+    font-family: 'Libre Bodoni', serif;
+    font-size: 48px;
+    line-height: 1.25;
+    text-align: center;
+    color: var(--beige);
+    z-index: 2;
+}
+
+.author {
+    font-family: 'Libre Bodoni', serif;
+    font-size: 32px;
+    line-height: 1.25;
+    text-align: right;
+    color: var(--beige);
+    z-index: 100;
+}
+
+#smokeFrames {
+    position: absolute;
+    width: 135%;
+    height: 140%;
+    object-fit: contain;
+    left: 50%;
+    top: -25%;
+    transform: translate(-50%, 0);
+    z-index: -1;
+}
+
+#rrxFrames {
+    left: 80%;
+    bottom: 23%;
+    transform: rotate(22deg);
+    position: absolute;
+    width: 750px;
+    height: auto;
+    object-fit: contain;
+}
+
+#rrx-text-wrapper {
+    width: 750px;
+    float: right;
+    transform: rotate(22deg);
+
+    margin-right: -89%;
+    margin-bottom: 25.2%;
+    shape-outside: url('../graphics/rrcrossingA.png');
+    shape-margin: 20px;
+    shape-image-threshold: 0.5;
+}
+
 img {
     display: block;
     margin: auto;
@@ -406,6 +520,7 @@ figcaption {
     width: 100%;
     text-align: center;
     display: block;
+    color: var(--black);
 }
 
 @media screen and (max-width: 800px) {
@@ -457,5 +572,26 @@ figcaption {
 
     #intro-title {
         width: 85%;
+    }
+
+    .quote-block {
+        position: static;
+        width: 100%;
+        transform: none;
+        height: auto;
+    }
+
+    .quote {
+        font-size: 28px;
+        color: var(--black);
+    }
+
+    .author {
+        font-size: 18px;
+        color: var(--black);
+    }
+
+    #smokeFrames {
+        display: none;
     }
 }
