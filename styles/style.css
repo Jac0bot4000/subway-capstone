@@ -462,25 +462,13 @@ h1 {
 }
 
 #rrxFrames {
-    left: 80%;
-    bottom: 23%;
-    transform: rotate(22deg);
+    bottom: 850px;
+    right: -140px;
     position: absolute;
-    width: 750px;
+    width: 900px;
     height: auto;
     object-fit: contain;
-}
-
-#rrx-text-wrapper {
-    width: 750px;
-    float: right;
-    transform: rotate(22deg);
-
-    margin-right: -89%;
-    margin-bottom: 25.2%;
-    shape-outside: url('../graphics/rrcrossingA.png');
-    shape-margin: 20px;
-    shape-image-threshold: 0.5;
+    transform: rotate(-5deg);
 }
 
 img {
