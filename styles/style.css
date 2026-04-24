@@ -207,15 +207,6 @@ html {
     display: block;
 } 
 
-.subway-wrap-text {
-    float: left;
-    width: 100%;
-    margin-left: -60%;
-    shape-outside: url('../graphics/subwaycarside.png');
-    shape-margin: 20px;
-    shape-image-threshold: 0.5;
-}
-
 .canalboat-wrap-text {
     float: right;
     width: 100%;
@@ -342,6 +333,10 @@ html {
     
 }
 
+#subway-car-side {
+    height: 100%;
+}
+
 .subway{
     background-color: var(--beige);
 }
@@ -349,42 +344,90 @@ html {
 .subway #rock5 {
     width: 172px;
     height: auto;
-    top: 450px;
+    top: 12%;
     right: 80px;
 }
 
 .subway #rock6 {
     width: 150px;
     height: auto;
-    top: 800px;
+    top: 17.5%;
     right: 15px;
 }
 
 .subway #rock7 {
     width: 220px;
     height: auto;
-    top: 600px;
+    top: 15%;
     right: 145px;
 }
 
 .subway #rock8 {
     width: 130px;
     height: auto;
-    top: 950px;
+    top: 20%;
     right: 105px;
 }
 
-.subway #token1 {
+.token {
     width: 150px;
+    height: auto;
+}
+
+.subway #token1 {
     top: 5%;
     left: 115px;
 }
 
 .subway #token2 {
-    width: 150px;
-    height: auto;
     top: 2.5%;
     left: 15px;
+}
+
+.subway #rock9 {
+    width: 220px;
+    height: auto;
+    top: 28%;
+    left: 105px;
+}
+
+.subway #rock10 {
+    width: 170px;
+    height: auto;
+    top: 32%;
+    left: 55px;
+}
+
+.subway #token3 {
+    top: 55%;
+    right: 115px;
+    scale: 1.3;
+}
+
+.subway #token4 {
+    top: 52%;
+    right: 25px;
+    scale: 1.3;
+}
+
+.subway #rock11 {
+    width: 170px;
+    height: auto;
+    top: 65%;
+    left: 125px;
+}
+
+.subway #rock12 {
+    width: 210px;
+    height: auto;
+    top: 68%;
+    left: 55px;
+}
+
+.subway #rock13 {
+    width: 260px;
+    top: 70%;
+    right: 55px;
 }
 
 #newspaper-graphic-vertical {
@@ -396,6 +439,31 @@ html {
     color: var(--white);
 }
 
+#street-light {
+    position: relative;
+    height: 200%;
+    left: 0px;
+    top: -10%;
+    margin: 0;
+}
+
+#stop-light {
+    position: absolute;
+    height: 800px;
+    left: 20px;
+    transform: rotate(15deg);
+    top: 5%;
+}
+
+#inner-loop{
+    margin: 0 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    shape-outside: url('../graphics/inner-loop.svg');
+    shape-margin: 20px;
+    shape-image-threshold: 0.5;
+}
+
 .graffiti{
     background-color: var(--black);
     color: var(--white);
@@ -404,6 +472,27 @@ html {
 
 .future{
     background-color: var(--future-green);
+}
+
+bdi {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.letter {
+    float: left;
+    width: 20ch;
+    margin-right: 1ch;
+}
+
+.highway .letter, .graffiti .letter {
+    filter: invert();
 }
 
 p {
@@ -505,10 +594,12 @@ figcaption {
     bottom: 80px;
     z-index: 10;
     font-size: 18pt;
-    width: 100%;
+    width: 90%;
     text-align: center;
     display: block;
     color: var(--black);
+    margin: 0 50%;
+    transform: translatex(-50%);
 }
 
 @media screen and (max-width: 800px) {
@@ -537,7 +628,7 @@ figcaption {
     .content_img {
         width: 95%;
     }
-    .canal {
+    .canal, .subway {
         display: block;
     }
     #tunnel {
@@ -547,11 +638,6 @@ figcaption {
     .canalboat-wrap-text {
         width: 50%;
         margin-right: -20%;
-    }
-
-    .subway-wrap-text {
-        width: 70%;
-        margin-left: -40%;
     }
 
     figure {
@@ -581,5 +667,12 @@ figcaption {
 
     #smokeFrames {
         display: none;
+    }
+
+    #street-light {
+        width: 100vw;
+        height: auto;
+        left: -30VW;
+        top: 20%;
     }
 }

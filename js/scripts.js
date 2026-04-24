@@ -87,6 +87,31 @@ document.addEventListener("DOMContentLoaded", () => {
       }
   });
 
+  gsap.fromTo('#subway-car-side', {
+    xPercent: -125,
+    left: 0
+    }, {
+    xPercent: 125,
+    left: "100vw",
+    scrollTrigger: {
+      trigger: "#subway-car-side",
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true,
+    }
+    
+  });
+
+  gsap.to('#stop-light', {
+    rotate: -5,
+    scrollTrigger: {
+      trigger: "#stop-light",
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true,
+    }
+  });
+
   const smokeFrames = gsap.utils.toArray("#smokeFrames .frame");
 
   gsap.set(smokeFrames, { opacity: 0});
@@ -97,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
   smokeFrames.forEach((frame, i) => {
     smokeAnimation.set(frame, {opacity: 1}, i * 0.3).set(frame, {opacity: 0}, (i + 1) * 0.3);
   });
+
 
   const rrxFrames = gsap.utils.toArray("#rrxFrames .frame");
 
