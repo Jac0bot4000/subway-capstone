@@ -238,6 +238,10 @@ html {
     background: linear-gradient(180deg, #333333 0%, #3E6357 46.63%, #BDE3B4 100%);
 }
 
+#sources-jess {
+    background: linear-gradient(180deg, var(--future-green) 0%, var(--orange) 100%);
+}
+
 .timeline-section {
     height: fit-content;
     display: grid;
@@ -552,6 +556,7 @@ html {
 
 .future{
     background-color: var(--future-green);
+    padding-bottom: 150px;
 }
 
 #walkSignFrames {
@@ -734,6 +739,125 @@ figcaption {
     transform: translatex(-50%);
 }
 
+.sources-container {
+    background-color: var(--future-green);
+    margin-top: -1px;
+    margin-bottom: -1px;
+    padding-bottom: 1px;
+}
+
+.sources {
+    width: 70ch;
+    margin: auto;
+}
+
+.sources h1 {
+    text-align: center;
+    font-size: 32px;
+}
+
+.source-link {
+    font-family: 'Libre Bodoni', serif;
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+}
+
+.source-caption {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.special-thanks-wrapper {
+    background-color: var(--orange);
+}
+
+.special-thanks {
+    margin: 0 auto;
+    width: 80ch;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 10px 40px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    padding-bottom: 1px;
+}
+
+.special-thanks h1 {
+    height: fit-content;
+    margin-bottom: 20px;
+}
+
+.special-thanks p {
+    max-width: 100%;
+}
+
+.special-thanks img {
+    width: 100%;
+    grid-column: 1;
+    grid-row: 1;
+}
+.special-thanks div {
+    grid-column: 2;
+}
+
+.about-us-wrapper {
+    background-color: var(--orange);
+    margin-top: -1px;
+    margin-bottom: -1px;
+    padding-bottom: 1px;
+}
+
+.about-us {
+    width: 85%;
+    margin: 0 auto;
+    padding: 200px 0;
+}
+
+.about-us h1 {
+    text-align: center;
+}
+
+.name, .role {
+    text-align: center;
+    margin: 0;
+}
+
+.role {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.profile {
+    width: 50ch;
+    display: grid;
+    grid-template-rows: 300px auto auto auto;
+    grid-template-columns: 100%;
+    gap: 5px;
+    border: 2pt solid var(--black);
+    padding: 10px;
+}
+
+.profile-picture {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.profiles {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer {
+    background-color: var(--orange);
+    width: 100vw;
+    text-align: center;
+}
+
 @media screen and (max-width: 800px) {
     .content-container {
         width: 100%;
@@ -806,5 +930,32 @@ figcaption {
         height: auto;
         left: -30VW;
         top: 20%;
+    }
+
+    #walkSignFrames, #walkSignFrames .frame {
+        height: 100%;
+    }
+
+    .sources {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .sources p {
+        padding-left: 0;
+    }
+
+    .special-thanks h1 {
+        padding: 0 20px;
+    }
+
+    .special-thanks {
+        margin: 0 auto;
+        width: 100%;
+        display: block;
+    }   
+
+    .special-thanks img {
+        width: 75%;
     }
 }
