@@ -462,6 +462,7 @@ html {
     shape-outside: url('../graphics/inner-loop.svg');
     shape-margin: 20px;
     shape-image-threshold: 0.5;
+    float: left;
 }
 
 .graffiti{
