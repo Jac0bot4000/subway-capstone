@@ -1,8 +1,25 @@
-  gsap.registerPlugin(DrawSVGPlugin);
-document.addEventListener("DOMContentLoaded", () => {
+// Scroll lock
+window.addEventListener('load', () => {
+    const body = document.body;
+    const canal = document.getElementsByClassName('canal')[0];
+
+    body.classList.add('scroll-lock');
+
+    setTimeout(() => {
+        body.classList.remove('scroll-lock');
+        
+        body.classList.add('intro-complete');
+
+        gsap.to(window, {duration: 2, scrollTo: ".canal", ease: "power2.inOut"});
+
+    }, 8200);
+});
+  
+  document.addEventListener("DOMContentLoaded", () => {
 
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollSmoother);
+  gsap.registerPlugin(DrawSVGPlugin);
 
 
   let smoother = ScrollSmoother.create({
@@ -316,19 +333,3 @@ handleRotation(mediaQuery);
 mediaQuery.addEventListener('change', handleRotation);
 
 
-// Scroll lock
-window.addEventListener('load', () => {
-    const body = document.body;
-    const canal = document.getElementsByClassName('canal')[0];
-
-    body.classList.add('scroll-lock');
-
-    setTimeout(() => {
-        body.classList.remove('scroll-lock');
-        
-        body.classList.add('intro-complete');
-
-        gsap.to(window, {duration: 2, scrollTo: ".canal", ease: "power2.inOut"});
-
-    }, 8200);
-});
