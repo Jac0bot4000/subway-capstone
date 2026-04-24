@@ -317,18 +317,18 @@ mediaQuery.addEventListener('change', handleRotation);
 
 
 // Scroll lock
-// window.addEventListener('load', () => {
-//     const body = document.body;
-//     const canal = document.getElementsByClassName('canal')[0];
+window.addEventListener('load', () => {
+    const body = document.body;
+    const canal = document.getElementsByClassName('canal')[0];
 
-//     body.classList.add('scroll-lock');
+    body.classList.add('scroll-lock');
 
-//     setTimeout(() => {
-//         body.classList.remove('scroll-lock');
+    setTimeout(() => {
+        body.classList.remove('scroll-lock');
         
-//         body.classList.add('intro-complete');
+        body.classList.add('intro-complete');
 
-//         gsap.to(window, {duration: 2, scrollTo: ".canal", ease: "power2.inOut"});
+        gsap.to(window, {duration: 2, scrollTo: ".canal", ease: "power2.inOut"});
 
-//     }, 8200);
-// });
+    }, 8200);
+});
