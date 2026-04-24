@@ -42,16 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  gsap.from(".subway-wrap-text", {
-    x: "-50vw",
-    scrollTrigger: {
-      trigger: ".subway-wrap-text",
-      start: 'top bottom',
-      end: 'center center',
-      scrub: true
-    }
-  });
-
   let contentImgs = gsap.utils.toArray("figure");
 
   contentImgs.forEach((image) => {
@@ -158,6 +148,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    gsap.from("#street-light", {
+      left: "-100vw",
+      scrollTrigger: {
+        trigger: "#street-light",
+        start: 'top bottom',
+        end: 'bottom 75%',
+        scrub: true
+      }
+    });
+
     gsap.fromTo("#inner-loop-path", 
     { drawSVG: "0%" }, 
     { 
@@ -191,7 +191,99 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  gsap.to('#tag1', {
+    rotate: 25,
+    scrollTrigger: {
+      trigger: "#tag1",
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
 
+  gsap.to('#tag2', {
+    rotate: -25,
+    scrollTrigger: {
+      trigger: "#tag2",
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+
+  gsap.to('#rocLogo1', {
+    rotate: 25,
+    scale: 1.4,
+    scrollTrigger: {
+      trigger: "#rocLogo1",
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+
+  const sprayPaintFrames = gsap.utils.toArray("#sprayPaintFrames .frame");
+
+  gsap.set(sprayPaintFrames, { opacity: 0});
+  gsap.set(sprayPaintFrames[0], { opacity: 1});
+
+  const sprayPaintAnimation = gsap.timeline({ repeat: -1 });
+
+  sprayPaintFrames.forEach((frame, i) => {
+    sprayPaintAnimation.set(frame, {opacity: 1}, i * 0.2).set(frame, {opacity: 0}, (i + 1) * 0.2);
+  });
+
+  const walkSignFrames = gsap.utils.toArray("#walkSignFrames .frame");
+
+  gsap.set(walkSignFrames, { opacity: 0});
+  gsap.set(walkSignFrames[0], { opacity: 1});
+
+  const walkSignFramesAnimation = gsap.timeline({ repeat: -1 });
+
+  walkSignFrames.forEach((frame, i) => {
+    walkSignFramesAnimation.set(frame, {opacity: 1}, i * 1.5).set(frame, {opacity: 0}, (i + 1) * 1.5);
+  });
+
+  gsap.to('#street-sign', {
+    rotate: 25,
+    scale: 1.4,
+    scrollTrigger: {
+      trigger: "#street-sign",
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+
+  gsap.to('#crossing-sign', {
+    rotate: -25,
+    scrollTrigger: {
+      trigger: "#crossing-sign",
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+
+  gsap.to('#bike-lane-sign', {
+    rotate: 15,
+    scrollTrigger: {
+      trigger: "#bike-lane-sign",
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+
+  gsap.to('#fuel-can', {
+    rotate: -15,
+    scrollTrigger: {
+      trigger: "#fuel-can",
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
 
 });
 

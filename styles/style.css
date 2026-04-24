@@ -489,11 +489,121 @@ html {
 .graffiti{
     background-color: var(--black);
     color: var(--white);
+    overflow: visible;
+}
 
+#sprayPaintFrames {
+    position: relative;
+    top: -11%;
+    left: -10%;
+    transform: scaleX(-1);
+    rotate: 20deg;
+}
+
+#tag1 {
+    position: absolute;
+    top: 15%;
+    width: 500px;
+    right: 20px;
+    rotate: -20deg;
+}
+
+#tag2 {
+    position: absolute;
+    top: 40%;
+    width: 500px;
+    left: 20px;
+    rotate: 20deg;
+}
+
+#rocLogo1 {
+    position: absolute;
+    top: 50%;
+    width: 210px;
+    right: 180px;
+}
+
+#rock14 {
+    position: absolute;
+    width: 160px;
+    top: 60%;
+    right: 30px;
+}
+
+#rock15 {
+    position: absolute;
+    width: 120px;
+    top: 63%;
+    right: 220px;
+}
+
+#rocLogo2 {
+    position: absolute;
+    bottom: 10%;
+    left: 40px;
+    width: 270px;
+}
+
+#rock16 {
+    bottom: 7%;
+    left: 300px;
+    width: 130px;
 }
 
 .future{
     background-color: var(--future-green);
+}
+
+#walkSignFrames {
+    position: relative;
+    left: 0px;
+    top: 0%;
+    height: 110%;
+}
+
+#walkSignFrames .frame {
+    height: 110%;
+    width: auto;
+}
+
+#street-sign {
+    position: absolute;
+    width: 400px;
+    top: 10%;
+    rotate: -20deg;
+    left: 20px;
+}
+
+#crossing-sign {
+    position: absolute;
+    top: 30%;
+    right: 60px;
+    width: 600px;
+    rotate: -5deg;
+}
+
+#bike-lane-sign {
+    position: absolute;
+    top: 55%;
+    left: 30px;
+    width: 450px;
+    rotate: -5deg;
+}
+
+#fuel-can {
+    position: absolute;
+    bottom: 5%;
+    right: -30px;
+    width: 460px;
+    rotate: 5deg;
+}
+
+.fade-bottom {
+  /* Standard property */
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  
+  /* Required for Safari support */
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
 bdi {
