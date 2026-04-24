@@ -437,6 +437,7 @@ html {
 .highway{
     background-color: var(--indigo);
     color: var(--white);
+    overflow: visible;
 }
 
 #street-light {
@@ -456,13 +457,33 @@ html {
 }
 
 #inner-loop{
-    margin: 0 50%;
-    transform: translateX(-50%);
-    width: 150%;
-    shape-outside: url('../graphics/inner-loop.svg');
-    shape-margin: 20px;
-    shape-image-threshold: 0.5;
-    float: left;
+    position: absolute;
+    top: 45%;
+    right: -20px;
+    rotate: -45deg;
+    width: 130%;
+    overflow: visible;
+}
+
+#inner-loop-path {
+    stroke-width: 20px;
+    stroke-linecap: round;
+}
+
+#interstate-shield {
+    position: absolute;
+    top: 60%;
+    left: 30px;
+}
+
+#parking-meter {
+    position: absolute;
+    bottom: -10%;
+    right: -190px;
+    height: 800px;
+    transform: rotate(45deg);
+    filter: brightness(0.7);
+    z-index: 5;
 }
 
 .graffiti{

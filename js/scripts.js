@@ -1,7 +1,9 @@
+  gsap.registerPlugin(DrawSVGPlugin);
 document.addEventListener("DOMContentLoaded", () => {
 
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollSmoother);
+
 
   let smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
@@ -155,7 +157,44 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    gsap.fromTo("#inner-loop-path", 
+    { drawSVG: "0%" }, 
+    { 
+      drawSVG: "100%", 
+      scrollTrigger: {
+          trigger: "#inner-loop-path",
+          start: 'top 75%',
+          end: 'bottom 35%',
+          scrub: true,
+        }          // Optional: draws it then "undraws" it back
+    }
+  );
+
+  gsap.to('#interstate-shield', {
+    rotate: 20,
+    scrollTrigger: {
+      trigger: "#interstate-shield",
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+
+  gsap.to('#parking-meter', {
+    rotate: 15,
+    scrollTrigger: {
+      trigger: "#interstate-shield",
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    }
+  });
+
+
+
 });
+
 
 const mediaQuery = window.matchMedia('(min-width: 800px)');
 
