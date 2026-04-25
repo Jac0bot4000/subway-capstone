@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
       smooth: 1.5,
-      smoothTouch: 0.1,
+      smoothTouch: 0,
       effects: true
   });
 

@@ -4,7 +4,7 @@
     --white: #f8f8f8;
     --indigo: #322c4d;
     --teal: #00ada7;
-    --orange: #f4a02b;
+    --orange: #FAC898;
     --red: #f70002;
     --pink: #ed6a9a;
     --green: #95c460;
@@ -831,17 +831,21 @@ figcaption {
 .profile {
     width: 50ch;
     display: grid;
-    grid-template-rows: 300px auto auto auto;
+    grid-template-rows: auto auto auto;
     grid-template-columns: 100%;
     gap: 5px;
-    border: 2pt solid var(--black);
+    /* border: 2pt solid var(--black); */
     padding: 10px;
+
+    background: rgba(229, 229, 229, .6);
+    border-radius: 8px;
 }
 
 .profile-picture {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    display: none;
 }
 
 .profiles {
