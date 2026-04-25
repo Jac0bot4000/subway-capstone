@@ -962,4 +962,8 @@ footer {
     .special-thanks img {
         width: 75%;
     }
+
+    .letter {
+        width: 12ch;
+    }
 }
